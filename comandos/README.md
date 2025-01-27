@@ -14,3 +14,4 @@ git init
 git add .
 git commit -m 'Mensagem'
 git remote add origin URL_DO_GIT
+git remote add origin git@github.com:caioalbraga/new_project.git
