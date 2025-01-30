@@ -1,7 +1,8 @@
 {% extends 'global/base.html' %}
 
 {% block content %}
-<div class="form-wrapper">
+  <div class="form-wrapper">
+
     <h2>Contact</h2>
     
     <form 
@@ -9,10 +10,10 @@
       method="POST"
       enctype="multipart/form-data"
     >
-
-    {% csrf_token %}
-
+      {% csrf_token %}      
+      
       <div class="form-content">
+
         {% for field in form %}
           <div class="form-group">
             <label for="{{ field.id_for_label }}">{{ field.label }}</label>
@@ -21,6 +22,7 @@
           </div>
         {% endfor %}
       </div>
+
       {% if form.non_field_errors %}
         <div class="form-content">
           <div class="form-group">
@@ -30,11 +32,13 @@
           </div>
         </div>
       {% endif %}
+
       <div class="form-content">
         <div class="form-group">
           <button class="btn" type="submit">Send</button>
         </div>
       </div>
+
     </form>
   </div>
 {% endblock content %}
